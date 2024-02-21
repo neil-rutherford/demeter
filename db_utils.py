@@ -1,7 +1,7 @@
 import sqlite3
 import datetime
 
-def create_database():
+def create_database(seed_funds=200):
     '''
     Generates tables for database. Use once.
     '''
@@ -41,6 +41,7 @@ def create_database():
     )
     """)
     con.close()
+    create_seed_funds(seed_funds)
 
 
 def create_advice(price, sma, standard_deviation, upper_band, lower_band, advice):
